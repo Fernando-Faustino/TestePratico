@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TestePratico.Models.PopulationData>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Population Viewer</title>
+</head>
+<body>
+    <form method="get" asp-controller="Home" asp-action="Index">
+        <label for="country">Enter country:</label>
+        <input type="text" id="country" name="country" />
+        <button type="submit">Filter</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Year</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model) {
+                <tr>
+                    <td>@data.Entity</td>
+                    <td>@data.Code</td>
+                    <td>@data.Year</td>
+                    <td>@data.Population</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
