@@ -6,16 +6,17 @@ namespace TestePratico.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Index(object populationData)
         {
-            _logger = logger;
+            IEnumerable<PopulationData> populationDataList = GetPopulationData();
+            return View(model: populationData);
         }
 
-        public IActionResult Index()
+
+        public IEnumerable<PopulationData>  GetPopulationData()
         {
-            return View("Views/Home/Index.cshtml");
+            throw new NotImplementedException();
         }
 
         public IActionResult Privacy()

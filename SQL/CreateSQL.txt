@@ -1,0 +1,6 @@
+CREATE TABLE Population (
+    Entity VARCHAR(255),
+    Code VARCHAR(50),
+    Year INT,
+    Population BIGINT
+);
